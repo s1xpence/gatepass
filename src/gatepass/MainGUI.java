@@ -305,11 +305,13 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
         // TODO add your handling code here:
+        /*
         if("g12 student does not have seniorGatePass#"){
             then("assume that it is a normal gate pass")
         }
         
-        if()
+        if() 
+        */
     }//GEN-LAST:event_submitButtonMouseReleased
 
     /**
