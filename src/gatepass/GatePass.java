@@ -10,6 +10,7 @@ package gatepass;
  * @author 14367
  */
 public class GatePass {
+    // test comment to see whether i can push to git or not
 
     private String name = "not set yet";
     private int gradeLevel = -999;
