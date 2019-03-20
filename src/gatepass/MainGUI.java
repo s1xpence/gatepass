@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gatepass;
+import java.util.ArrayList
 
 /**
  *
@@ -11,7 +12,7 @@ package gatepass;
  */
 public class MainGUI extends javax.swing.JFrame {
 
-    private GatePass [] newPasses = new GatePass[200];
+    private ArrayList<GatePass> students = new ArrayList<GatePass>();
     
     int counter = 0;
     /**
@@ -51,6 +52,8 @@ public class MainGUI extends javax.swing.JFrame {
         gradeNumberTF = new javax.swing.JComboBox<>();
         gatePassCheckBox = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
+        importButton = new javax.swing.JButton();
+        exportButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -145,7 +148,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         jScrollPane5.setViewportView(reasonTF);
 
-        gradeNumberTF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grade 9", "Grade 10", "Grade 11", "Grade 12" }));
+        gradeNumberTF.setModel(new javax.swing.DefaultComboBoxModel<>(new int[] { 9, 10, 11, 12 }));
 
         gatePassCheckBox.setText("Senior Gate Pass");
 
@@ -214,15 +217,29 @@ public class MainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("New Pass", jPanel4);
 
+        importButton.setText("Import");
+
+        exportButton.setText("Export");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 934, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exportButton)
+                    .addComponent(importButton))
+                .addContainerGap(786, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(importButton)
+                .addGap(37, 37, 37)
+                .addComponent(exportButton)
+                .addContainerGap(368, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("SaveExport", jPanel1);
@@ -328,12 +345,7 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
         // TODO add your handling code here:
-        /*
-        if("is a g12 student
-        }
-        
-        if() 
-        */
+        students.add(new Student(nameTF.getText(), Integer.parseInt(gradeNumberTF)));
     }//GEN-LAST:event_submitButtonMouseReleased
 
     /**
@@ -379,6 +391,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
+    private javax.swing.JButton exportButton;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JCheckBox gatePassCheckBox;
     private javax.swing.JComboBox<String> gradeNumberTF;
@@ -386,6 +399,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JTextPane idNumberTF;
     private javax.swing.JLabel idTL;
+    private javax.swing.JButton importButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
