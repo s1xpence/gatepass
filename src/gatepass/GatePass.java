@@ -49,23 +49,31 @@ public class GatePass {
     public int getId() {
         return id;
     }
+    
+    public DateTime getDate () {
+        return date;
+    }
 
     //sets
 
-    public void setName(String name) {
+    public void setName(String name){
         this.name = name;
     }
     
-    public void setGrade(int gradeLevel) {
+    public void setGrade(int gradeLevel){
         this.gradeLevel = gradeLevel;
     }
     
-    public void setId( int id) {
+    public void setId(int id) {
         this.id = id;
     }
     
-    public void setSenior( boolean setSenior){
+    public void setSenior(boolean setSenior){
         this.setSenior = setSenior;
                 }
+    
+    public void setDate(DateTime date){
+        this.setDate = setDate;
+    }
 
 }
