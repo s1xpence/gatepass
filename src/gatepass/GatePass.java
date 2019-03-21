@@ -15,15 +15,16 @@ public class GatePass {
     //       (such as if the option "G12" for grade level has been selected, then enable checkbox to be ticked.
     //       Else, disable option for all other grades)
     private String name = "not set yet";
-    private int gradeLevel = -999;
     private int id = -123;
+    private int gradeLevel = -999;
+    DateTime date = new DateTime();
     private boolean setSenior = false;
     //constructors
     public GatePass() {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id, boolean setSenior) {
+    public GatePass(String name, int id, int gradeLevel, DateTime date, boolean setSenior) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
