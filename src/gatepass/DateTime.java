@@ -13,11 +13,12 @@ package gatepass;
  * https://github.com/halcyonseeker/csia
  */
 public class DateTime {
-     private String[] day = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    private String[] day = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     private byte date = -25;
     private String[] month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     private int year = -999; 
     
+    // figure out some sorts https://stackoverflow.com/questions/5927109/sort-objects-in-arraylist-by-date
     
     public DateTime (){
         
