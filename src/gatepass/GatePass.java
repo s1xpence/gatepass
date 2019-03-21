@@ -17,15 +17,17 @@ public class GatePass {
     private String name = "not set yet";
     private int gradeLevel = -999;
     private int id = -123;
+    private boolean setSenior = false;
     //constructors
     public GatePass() {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id) {
+    public GatePass(String name, int gradeLevel, int id, boolean setSenior) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
+        this.setSenior = setSenior;
     }
 
     //accessor methods
@@ -60,5 +62,9 @@ public class GatePass {
     public void setId( int id) {
         this.id = id;
     }
+    
+    public void setSenior( boolean setSenior){
+        this.setSenior = setSenior;
+                }
 
 }

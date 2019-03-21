@@ -13,8 +13,8 @@ public class SeniorGatePass extends GatePass {
     private int passNumber = -1;
     
     
-    public SeniorGatePass(String name, int gradeLevel, int id, int passNumber) {
-        super(name, gradeLevel, id);
+    public SeniorGatePass(String name, int gradeLevel, int id, int passNumber, boolean setSenior) {
+        super(name, gradeLevel, id, setSenior);
         this.passNumber = passNumber;
     }
     

@@ -13,8 +13,8 @@ public class NormalGatePass extends GatePass {
     private String reason = "Not set yet";
     
     
-    public NormalGatePass(String name, int gradeLevel, int id, String reason) {
-        super(name, gradeLevel, id);
+    public NormalGatePass(String name, int gradeLevel, int id, String reason, boolean setSenior) {
+        super(name, gradeLevel, id, setSenior);
         this.reason = reason;
     }
     

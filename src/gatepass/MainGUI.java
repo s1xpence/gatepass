@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class MainGUI extends javax.swing.JFrame {
 
     private ArrayList<GatePass> students = new ArrayList<GatePass>();
+    private ArrayList<NormalGatePass> normalPass = new ArrayList<NormalGatePass>();
+    private ArrayList<SeniorGatePass> seniorPass = new ArrayList<SeniorGatePass>();
+
     
     int counter = 0;
     /**
@@ -49,7 +52,7 @@ public class MainGUI extends javax.swing.JFrame {
         idNumberTF = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
         reasonTF = new javax.swing.JTextPane();
-        gatePassCheckBox = new javax.swing.JCheckBox();
+        isSeniorPassCheckBox = new javax.swing.JCheckBox();
         gradeNumberTF = new javax.swing.JTextField();
         seniorGatePassNumTL = new javax.swing.JLabel();
         seniorPassNumTF = new javax.swing.JTextField();
@@ -150,7 +153,12 @@ public class MainGUI extends javax.swing.JFrame {
 
         jScrollPane5.setViewportView(reasonTF);
 
-        gatePassCheckBox.setText("Senior Gate Pass");
+        isSeniorPassCheckBox.setText("Senior Gate Pass");
+        isSeniorPassCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                isSeniorPassCheckBoxActionPerformed(evt);
+            }
+        });
 
         gradeNumberTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,7 +204,7 @@ public class MainGUI extends javax.swing.JFrame {
                             .addGroup(NewPassPanelLayout.createSequentialGroup()
                                 .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(gatePassCheckBox))
+                                .addComponent(isSeniorPassCheckBox))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(593, Short.MAX_VALUE))
         );
@@ -215,7 +223,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gradeTL)
                     .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gatePassCheckBox))
+                    .addComponent(isSeniorPassCheckBox))
                 .addGap(7, 7, 7)
                 .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(idTL)
@@ -364,7 +372,11 @@ public class MainGUI extends javax.swing.JFrame {
     private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
         // TODO add your handling code here:
 
-        students.add(new GatePass(nameTF.getText(), Integer.parseInt(gradeNumberTF)));
+        students.add(new GatePass(nameTF.getText(), Integer.parseInt(gradeNumberTF.getText()), Integer.parseInt(idNumberTF.getText()),  
+                isSeniorPassCheckBox.isSelected()));
+        
+        nameTF.setText("");
+        gradeNumberTF.setText("");
     }//GEN-LAST:event_submitButtonMouseReleased
 
     private void seniorPassNumTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seniorPassNumTFActionPerformed
@@ -374,6 +386,10 @@ public class MainGUI extends javax.swing.JFrame {
     private void gradeNumberTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradeNumberTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_gradeNumberTFActionPerformed
+
+    private void isSeniorPassCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isSeniorPassCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_isSeniorPassCheckBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -421,7 +437,6 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JButton exportButton;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JCheckBox gatePassCheckBox;
     private javax.swing.JPanel gatePassesPanel;
     private javax.swing.JTextField gradeNumberTF;
     private javax.swing.JLabel gradeTL;
@@ -429,6 +444,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JTextPane idNumberTF;
     private javax.swing.JLabel idTL;
     private javax.swing.JButton importButton;
+    private javax.swing.JCheckBox isSeniorPassCheckBox;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;

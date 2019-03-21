@@ -267,7 +267,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="gradeNumberTF" min="-2" pref="50" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="gatePassCheckBox" min="-2" max="-2" attributes="0"/>
+                                      <Component id="isSeniorPassCheckBox" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane4" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
@@ -295,7 +295,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="gradeTL" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="gradeNumberTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gatePassCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="isSeniorPassCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -382,10 +382,13 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JCheckBox" name="gatePassCheckBox">
+            <Component class="javax.swing.JCheckBox" name="isSeniorPassCheckBox">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Senior Gate Pass"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="isSeniorPassCheckBoxActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="gradeNumberTF">
               <Events>
