@@ -132,7 +132,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("GatePasses", gatePassesPanel);
+        jTabbedPane1.addTab("Records", gatePassesPanel);
 
         nameTL.setText("Name");
 
@@ -222,11 +222,11 @@ public class MainGUI extends javax.swing.JFrame {
                     .addGroup(NewPassPanelLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(nameTL)
-                        .addGap(4, 4, 4))
+                        .addGap(7, 7, 7))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NewPassPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(3, 3, 3)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)))
                 .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gradeTL)
                     .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
