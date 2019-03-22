@@ -9,6 +9,8 @@ package gatepass;
  *
  * @author 14367
  */
+
+/*
 public class test {
     MyDate d = new MyDate(Byte.parseByte(dateCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+""));
     
@@ -28,4 +30,4 @@ else if(seniorGatePassCheckBox = true){
                 }
 else(get seniorPassNumTF)
 }
-
+*/

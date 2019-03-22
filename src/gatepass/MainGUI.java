@@ -237,17 +237,17 @@ public class MainGUI extends javax.swing.JFrame {
 
         recordsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "ID Number", "Grade", "Date", "Comments", "Senior Pass #"
+                "Name", "ID No.", "Grade", "Date", "Time", "Comments", "Senior Pass #"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -260,8 +260,8 @@ public class MainGUI extends javax.swing.JFrame {
         if (recordsTable.getColumnModel().getColumnCount() > 0) {
             recordsTable.getColumnModel().getColumn(0).setMinWidth(120);
             recordsTable.getColumnModel().getColumn(0).setMaxWidth(120);
-            recordsTable.getColumnModel().getColumn(1).setMinWidth(100);
-            recordsTable.getColumnModel().getColumn(1).setMaxWidth(100);
+            recordsTable.getColumnModel().getColumn(1).setMinWidth(70);
+            recordsTable.getColumnModel().getColumn(1).setMaxWidth(70);
         }
 
         refreshButton.setText("refresh");
@@ -277,8 +277,8 @@ public class MainGUI extends javax.swing.JFrame {
             gatePassesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gatePassesPanelLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(refreshButton)
                 .addContainerGap(131, Short.MAX_VALUE))
         );
@@ -428,7 +428,9 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
         // TODO add your handling code here:
-        if(isSeniorPassCheckBox.isSelected()){
+        if(isSeniorPassCheckBox.isSelected()){ // this is a example of true polymorphism because i'm using a list
+                                               // of the superclass GatePass but the individual objects are either
+                                               // SeniorGatePass or NormalGatePass
             
         
         
@@ -472,23 +474,26 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
-        for(int row = 0; row < recordsTable.getRowCount(); row ++){ // this function will loop through the table while inputting data.
+        
+        if(isSeniorPassCheckBox.isSelected() == true){      
+            if(seniorPassNumTF.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "A test dialog");
+            }
+        }
+        
+        
+        for(int row = 0; row < students.size(); row ++){ // this function will loop through the table while inputting data.
             recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
             recordsTable.setValueAt(students.get(row).getId(), row, 1);
             recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
             
-                if(isSeniorPassCheckBox.isSelected() == false){
-                    recordsTable.setValueAt(students.get(row).getComments(), row, 4);
-                    commentsTF.getText();
-                }
+            if(isSeniorPassCheckBox.isSelected() == false){
+                recordsTable.setValueAt(normalPass.get(row).getComments(), row, 5);
+            }
+            
 
-                else if(isSeniorPassCheckBox.isSelected() == true){
-                    if(seniorPassNumTF.getText().equals("")){
-                        JOptionPane.showMessageDialog(this, "A test dialog");
-                        }
-                    else{
-                        recordsTable.setValueAt(students.get(row).getPassNumber(), row, 5);
-                    }
+            else if(isSeniorPassCheckBox.isSelected() == true){
+                 recordsTable.setValueAt(seniorPass.get(row).getPassNumber(), row, 6);
             }
             
             

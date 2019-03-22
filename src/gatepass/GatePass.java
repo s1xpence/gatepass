@@ -18,21 +18,18 @@ public class GatePass {
     private String name = "name not set yet";
     private int gradeLevel = -999;
     private int id = -123;
+    
     // DateTime date = new DateTime();
-    private String comments = "comment not set yet";
-    private int passNumber = -123;
-    private boolean setSenior = false;
     //constructors
     public GatePass() {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id, String comments, int passNumber, boolean setSenior) {
+    public GatePass(String name, int gradeLevel, int id) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
-        this.passNumber = passNumber;
-        this.setSenior = setSenior;
+        
     }
 
     //accessor methods
@@ -54,13 +51,6 @@ public class GatePass {
         return id;
     }
     
-    public String getComments(){
-        return comments;
-    }
-    
-    public int getPassNumber(){
-        return passNumber;
-    }
     /*
     public DateTime getDate () {
         return date;
@@ -80,18 +70,6 @@ public class GatePass {
     public void setId(int id) {
         this.id = id;
     }
-    
-    public void setComments(String comments){
-        this.comments = comments;
-    }
-    
-    public void setPassNumber(int passNUmber){
-        this.passNumber = passNumber;
-    }
-    
-    public void setSenior(boolean setSenior){
-        this.setSenior = setSenior;
-                }
     /*
     public void setDate(DateTime date){
         this.date = date;
