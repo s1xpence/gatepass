@@ -15,10 +15,11 @@ public class GatePass {
     //       (such as if the option "G12" for grade level has been selected, then enable checkbox to be ticked.
     //       Else, disable option for all other grades)
     // TODO: MENTION THAT I COLLABORATED ON PROJECT WITH GABE IN CRITERION C
-    private String name = "not set yet";
+    private String name = "name not set yet";
     private int gradeLevel = -999;
     private int id = -123;
     // DateTime date = new DateTime();
+    private String comments = "comment not set yet";
     private int passNumber = -123;
     private boolean setSenior = false;
     //constructors
@@ -26,7 +27,7 @@ public class GatePass {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id, int passNumber, boolean setSenior) {
+    public GatePass(String name, int gradeLevel, int id, String comments, int passNumber, boolean setSenior) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
@@ -53,6 +54,10 @@ public class GatePass {
         return id;
     }
     
+    public String getComments(){
+        return comments;
+    }
+    
     public int getPassNumber(){
         return passNumber;
     }
@@ -74,6 +79,10 @@ public class GatePass {
     
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public void setComments(String comments){
+        this.comments = comments;
     }
     
     public void setPassNumber(int passNUmber){

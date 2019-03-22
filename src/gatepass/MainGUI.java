@@ -265,9 +265,9 @@ public class MainGUI extends javax.swing.JFrame {
         }
 
         refreshButton.setText("refresh");
-        refreshButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                refreshButtonMouseReleased(evt);
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshButtonActionPerformed(evt);
             }
         });
 
@@ -278,18 +278,19 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(gatePassesPanelLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addGap(104, 104, 104)
                 .addComponent(refreshButton)
-                .addGap(121, 121, 121))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         gatePassesPanelLayout.setVerticalGroup(
             gatePassesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gatePassesPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
                 .addGroup(gatePassesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(gatePassesPanelLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(gatePassesPanelLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
                         .addComponent(refreshButton)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
@@ -427,22 +428,41 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
         // TODO add your handling code here:
+        if(isSeniorPassCheckBox.isSelected()){
+            
         
         
         students.add(
-                new GatePass(nameTF.getText(), 
+                new SeniorGatePass(nameTF.getText(), 
                 Integer.parseInt(gradeNumberTF.getText()), 
                 Integer.parseInt(idNumberTF.getText()),
+                commentsTF.getText(),
                 Integer.parseInt(seniorPassNumTF.getText()),    
                 // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
                 isSeniorPassCheckBox.isSelected())
                 
         );
+        } // for if statement
         
+        else{
+            students.add(
+                new NormalGatePass(nameTF.getText(), 
+                Integer.parseInt(gradeNumberTF.getText()), 
+                Integer.parseInt(idNumberTF.getText()),
+                commentsTF.getText())
+                
+                // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
+                
+                );
+            
+     
+                    
+        }
         nameTF.setText("");
         gradeNumberTF.setText("");
         idNumberTF.setText("");
         commentsTF.setText("");
+        seniorPassNumTF.setText("");
         isSeniorPassCheckBox.setSelected(false);
         
     }//GEN-LAST:event_submitButtonMouseReleased
@@ -459,13 +479,15 @@ public class MainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_isSeniorPassCheckBoxActionPerformed
 
-    private void refreshButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshButtonMouseReleased
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
         for(int row = 0; row < recordsTable.getRowCount(); row ++){ // this function will loop through the table while inputting data.
             recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
             recordsTable.setValueAt(students.get(row).getId(), row, 1);
             recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+            
                 if(isSeniorPassCheckBox.isSelected() == false){
+                    recordsTable.setValueAt(students.get(row).getComments(), row, 4);
                     commentsTF.getText();
                 }
 
@@ -477,6 +499,7 @@ public class MainGUI extends javax.swing.JFrame {
                         recordsTable.setValueAt(students.get(row).getPassNumber(), row, 5);
                     }
             }
+            
             
             
             /* if isSeniorPassCheckBox = true{
@@ -493,14 +516,8 @@ public class MainGUI extends javax.swing.JFrame {
                         /* if isSeniorPassCheckBox = false{
                 then get comments box
             */
-            
-            
-            
-            
-            
-            
         }
-    }//GEN-LAST:event_refreshButtonMouseReleased
+    }//GEN-LAST:event_refreshButtonActionPerformed
 
     /**
      * @param args the command line arguments
