@@ -433,6 +433,7 @@ public class MainGUI extends javax.swing.JFrame {
                 new GatePass(nameTF.getText(), 
                 Integer.parseInt(gradeNumberTF.getText()), 
                 Integer.parseInt(idNumberTF.getText()),
+                Integer.parseInt(seniorPassNumTF.getText()),    
                 // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
                 isSeniorPassCheckBox.isSelected())
                 
@@ -473,7 +474,7 @@ public class MainGUI extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "A test dialog");
                         }
                     else{
-                        seniorPassNumTF.getText();
+                        recordsTable.setValueAt(students.get(row).getPassNumber(), row, 5);
                     }
             }
             

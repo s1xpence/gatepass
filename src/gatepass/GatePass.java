@@ -19,16 +19,18 @@ public class GatePass {
     private int gradeLevel = -999;
     private int id = -123;
     // DateTime date = new DateTime();
+    private int passNumber = -123;
     private boolean setSenior = false;
     //constructors
     public GatePass() {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id, boolean setSenior) {
+    public GatePass(String name, int gradeLevel, int id, int passNumber, boolean setSenior) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
+        this.passNumber = passNumber;
         this.setSenior = setSenior;
     }
 
@@ -50,6 +52,10 @@ public class GatePass {
     public int getId() {
         return id;
     }
+    
+    public int getPassNumber(){
+        return passNumber;
+    }
     /*
     public DateTime getDate () {
         return date;
@@ -68,6 +74,10 @@ public class GatePass {
     
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public void setPassNumber(int passNUmber){
+        this.passNumber = passNumber;
     }
     
     public void setSenior(boolean setSenior){
