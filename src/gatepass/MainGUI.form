@@ -171,6 +171,8 @@
                                       <Component id="monthCB" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="yearCB" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane3" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
@@ -185,7 +187,7 @@
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="seniorGatePassNumTL" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="reasonTL" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="commentsTL" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -194,7 +196,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="567" max="32767" attributes="0"/>
+                      <EmptySpace pref="437" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -236,6 +238,7 @@
                                   <Component id="dayCB" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="monthCB" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="yearCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -246,7 +249,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="reasonTL" min="-2" max="-2" attributes="0"/>
+                          <Component id="commentsTL" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane5" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="76" max="32767" attributes="0"/>
@@ -272,7 +275,7 @@
                 <Property name="text" type="java.lang.String" value="ID Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="reasonTL">
+            <Component class="javax.swing.JLabel" name="commentsTL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comments"/>
               </Properties>
@@ -315,7 +318,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="reasonTF">
+                <Component class="javax.swing.JTextPane" name="commentsTF">
                 </Component>
               </SubComponents>
             </Container>
@@ -376,6 +379,14 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="feature still in progress"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

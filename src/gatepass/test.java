@@ -15,3 +15,17 @@ public class test {
 peopleArray.add(new Person(
                 d,
         )
+}
+
+
+if(isSeniorGatePassCheckBox = false){
+    then get commentsTF
+            }
+
+else if(seniorGatePassCheckBox = true){
+    then check if(seniorPassNumTF = "null"){
+       then ABORT
+                }
+else(get seniorPassNumTF)
+}
+
