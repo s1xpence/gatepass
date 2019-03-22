@@ -439,24 +439,15 @@ public class MainGUI extends javax.swing.JFrame {
                 commentsTF.getText(),
                 Integer.parseInt(seniorPassNumTF.getText()),    
                 // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
-                isSeniorPassCheckBox.isSelected())
-                
-        );
-        } // for if statement
+                isSeniorPassCheckBox.isSelected()));
+                } // for if statement
         
         else{
             students.add(
                 new NormalGatePass(nameTF.getText(), 
                 Integer.parseInt(gradeNumberTF.getText()), 
                 Integer.parseInt(idNumberTF.getText()),
-                commentsTF.getText())
-                
-                // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
-                
-                );
-            
-     
-                    
+                commentsTF.getText()));            
         }
         nameTF.setText("");
         gradeNumberTF.setText("");
