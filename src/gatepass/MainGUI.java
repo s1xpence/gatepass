@@ -59,8 +59,8 @@ public class MainGUI extends javax.swing.JFrame {
         yearCB = new javax.swing.JComboBox<>();
         gatePassesPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        sortButton = new javax.swing.JButton();
+        recordsTable = new javax.swing.JTable();
+        refreshButton = new javax.swing.JButton();
         saveExportPanel = new javax.swing.JPanel();
         importButton = new javax.swing.JButton();
         exportButton = new javax.swing.JButton();
@@ -227,7 +227,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         jScrollPane1.setOpaque(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        recordsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -246,17 +246,22 @@ public class MainGUI extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        jTable1.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(120);
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(120);
-            jTable1.getColumnModel().getColumn(1).setMinWidth(100);
-            jTable1.getColumnModel().getColumn(1).setMaxWidth(100);
+        recordsTable.setGridColor(new java.awt.Color(0, 0, 0));
+        recordsTable.setShowGrid(true);
+        jScrollPane1.setViewportView(recordsTable);
+        if (recordsTable.getColumnModel().getColumnCount() > 0) {
+            recordsTable.getColumnModel().getColumn(0).setMinWidth(120);
+            recordsTable.getColumnModel().getColumn(0).setMaxWidth(120);
+            recordsTable.getColumnModel().getColumn(1).setMinWidth(100);
+            recordsTable.getColumnModel().getColumn(1).setMaxWidth(100);
         }
 
-        sortButton.setText("sortButton");
+        refreshButton.setText("refresh");
+        refreshButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                refreshButtonMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout gatePassesPanelLayout = new javax.swing.GroupLayout(gatePassesPanel);
         gatePassesPanel.setLayout(gatePassesPanelLayout);
@@ -265,8 +270,8 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(gatePassesPanelLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addComponent(sortButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(refreshButton)
                 .addGap(121, 121, 121))
         );
         gatePassesPanelLayout.setVerticalGroup(
@@ -277,7 +282,7 @@ public class MainGUI extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(gatePassesPanelLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(sortButton)))
+                        .addComponent(refreshButton)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
@@ -444,6 +449,38 @@ public class MainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_isSeniorPassCheckBoxActionPerformed
 
+    private void refreshButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshButtonMouseReleased
+        // TODO add your handling code here:
+        for(int row = 0; row < recordsTable.getRowCount(); row ++){ // this function will loop through the table while inputting data.
+            recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
+            recordsTable.setValueAt(students.get(row).getId(), row, 1);
+            recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+            
+            
+            /* if isSeniorPassCheckBox = true{
+                then get seniorPassNumTF
+            */
+            
+            /* if isSeniorPassCheckBox = true{
+                then get senior gate pass #
+            else if seniorPassNumTF is "null" {
+                cancel submit information request
+                sout("you forgot to include senior gate pass #")
+            }
+            */
+            
+            
+            
+            
+            
+            
+            
+            /* if isSeniorPassCheckBox = false{
+                then get comments box
+            */
+        }
+    }//GEN-LAST:event_refreshButtonMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -505,7 +542,6 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JComboBox<String> monthCB;
     private javax.swing.JTextPane nameTF;
@@ -514,13 +550,14 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JTextPane reasonTF;
     private javax.swing.JLabel reasonTL;
+    private javax.swing.JTable recordsTable;
+    private javax.swing.JButton refreshButton;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JPanel saveExportPanel;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JLabel seniorGatePassNumTL;
     private javax.swing.JTextField seniorPassNumTF;
     private javax.swing.JPanel settingsPanel;
-    private javax.swing.JButton sortButton;
     private javax.swing.JButton submitButton;
     private javax.swing.JComboBox<String> yearCB;
     // End of variables declaration//GEN-END:variables
