@@ -191,10 +191,11 @@ public class MainGUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)))
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gradeTL)
-                    .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(isSeniorPassCheckBox))
+                    .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(isSeniorPassCheckBox)))
                 .addGap(7, 7, 7)
                 .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(idTL)
@@ -413,9 +414,16 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
         // TODO add your handling code here:
-
-        students.add(new GatePass(nameTF.getText(), Integer.parseInt(gradeNumberTF.getText()), Integer.parseInt(idNumberTF.getText()),  
-                isSeniorPassCheckBox.isSelected()));
+        
+        
+        students.add(
+                new GatePass(nameTF.getText(), 
+                Integer.parseInt(gradeNumberTF.getText()), 
+                Integer.parseInt(idNumberTF.getText()),
+                // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
+                isSeniorPassCheckBox.isSelected())
+                
+        );
         
         nameTF.setText("");
         gradeNumberTF.setText("");
