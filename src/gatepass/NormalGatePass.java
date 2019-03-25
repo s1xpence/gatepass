@@ -10,20 +10,19 @@ package gatepass;
  * @author 14367
  */
 public class NormalGatePass extends GatePass {
-    private String comments = "Not set yet";
-    
+    private boolean isSenior = false; //mod    
     
     public NormalGatePass(String name, int gradeLevel, int id, String comments) {
-        super(name, gradeLevel, id);
-        this.comments = comments;
+        super(name, gradeLevel, id, comments); //mod comments
     }
     
-    public String getComments(){
-        return comments;
+    public boolean getIsSenior(){
+        return isSenior;
     }
     
-    public void setComments(String comments){
-        this.comments = comments;
+    public int getPassNumber(){
+        return -999;
     }
+   
     
 }

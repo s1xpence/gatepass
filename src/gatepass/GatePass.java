@@ -9,7 +9,7 @@ package gatepass;
  *
  * @author 14367
  */
-public class GatePass {
+public abstract class GatePass {
     // TODO: add funny error message: "Mr. Java I don't feel so good... SEGMENTATION FAULT"
     // TODO: GUI Class: make it so that the "senior gate pass" checkbox is only enabled conditionally
     //       (such as if the option "G12" for grade level has been selected, then enable checkbox to be ticked.
@@ -18,6 +18,7 @@ public class GatePass {
     private String name = "name not set yet";
     private int gradeLevel = -999;
     private int id = -123;
+    private String comments = "not set yet"; //mod
     
     // DateTime date = new DateTime();
     //constructors
@@ -25,10 +26,11 @@ public class GatePass {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id) {
+    public GatePass(String name, int gradeLevel, int id, String comments) { //mod
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
+        this.comments = comments; //mod
         
     }
 
@@ -51,6 +53,10 @@ public class GatePass {
         return id;
     }
     
+    public String getComments(){ //mod
+        return comments;
+    }
+    
     /*
     public DateTime getDate () {
         return date;
@@ -70,6 +76,8 @@ public class GatePass {
     public void setId(int id) {
         this.id = id;
     }
+    
+    abstract int getPassNumber(); //mod
     /*
     public void setDate(DateTime date){
         this.date = date;

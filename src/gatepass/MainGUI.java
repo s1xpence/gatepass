@@ -483,20 +483,29 @@ public class MainGUI extends javax.swing.JFrame {
         
         
         for(int row = 0; row < students.size(); row ++){ // this function will loop through the table while inputting data.
-            recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
-            recordsTable.setValueAt(students.get(row).getId(), row, 1);
-            recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+            
             
             if(isSeniorPassCheckBox.isSelected() == false){
-                recordsTable.setValueAt(normalPass.get(row).getComments(), row, 5);
+                recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
+                recordsTable.setValueAt(students.get(row).getId(), row, 1);
+                recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+                recordsTable.setValueAt(students.get(row).getComments(), row, 5);
             }
             
 
             else if(isSeniorPassCheckBox.isSelected() == true){
-                 recordsTable.setValueAt(seniorPass.get(row).getPassNumber(), row, 6);
+                recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
+                recordsTable.setValueAt(students.get(row).getId(), row, 1);
+                recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+                recordsTable.setValueAt(students.get(row).getComments(), row, 5);
+                
+                SeniorGatePass s = (SeniorGatePass)(students.get(row));
+                recordsTable.setValueAt(s.getPassNumber(), row, 6);
             }
             
             
+            
+                     
             
             /* if isSeniorPassCheckBox = true{
                 then get seniorPassNumTF
