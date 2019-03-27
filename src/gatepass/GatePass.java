@@ -14,32 +14,25 @@ public abstract class GatePass {
     // TODO: GUI Class: make it so that the "senior gate pass" checkbox is only enabled conditionally
     //       (such as if the option "G12" for grade level has been selected, then enable checkbox to be ticked.
     //       Else, disable option for all other grades)
-    // TODO: MENTION THAT I COLLABORATED ON PROJECT WITH GABE IN CRITERION C
     private String name = "name not set yet";
     private int gradeLevel = -999;
     private int id = -123;
-    private String comments = "not set yet"; //mod
+    private String comments = "not set yet"; 
     
-    // DateTime date = new DateTime();
     //constructors
     public GatePass() {
 
     }
 
-    public GatePass(String name, int gradeLevel, int id, String comments) { //mod
+    public GatePass(String name, int gradeLevel, int id, String comments) { 
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.id = id;
-        this.comments = comments; //mod
+        this.comments = comments; 
         
     }
 
     //accessor methods
-    /*
-    public String getName() {
-        return name;
-    }
-    */
 
     public int getGrade() {
         return gradeLevel;
@@ -53,15 +46,9 @@ public abstract class GatePass {
         return id;
     }
     
-    public String getComments(){ //mod
+    public String getComments(){
         return comments;
     }
-    
-    /*
-    public DateTime getDate () {
-        return date;
-    }
-*/
 
     //sets
 
@@ -77,11 +64,6 @@ public abstract class GatePass {
         this.id = id;
     }
     
-    abstract int getPassNumber(); //mod
-    /*
-    public void setDate(DateTime date){
-        this.date = date;
-    }
-*/
+    abstract int getPassNumber();
 
 }

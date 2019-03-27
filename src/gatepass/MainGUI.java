@@ -54,19 +54,10 @@ public class MainGUI extends javax.swing.JFrame {
         gradeNumberTF = new javax.swing.JTextField();
         seniorGatePassNumTL = new javax.swing.JLabel();
         seniorPassNumTF = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        dayCB = new javax.swing.JComboBox<>();
-        monthCB = new javax.swing.JComboBox<>();
-        yearCB = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         gatePassesPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         recordsTable = new javax.swing.JTable();
         refreshButton = new javax.swing.JButton();
-        saveExportPanel = new javax.swing.JPanel();
-        importButton = new javax.swing.JButton();
-        exportButton = new javax.swing.JButton();
-        settingsPanel = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -131,123 +122,85 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Date (d/m/y)");
-
-        dayCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-
-        monthCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
-
-        yearCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2023" }));
-
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("feature still in progress");
-
         javax.swing.GroupLayout NewPassPanelLayout = new javax.swing.GroupLayout(NewPassPanel);
         NewPassPanel.setLayout(NewPassPanelLayout);
         NewPassPanelLayout.setHorizontalGroup(
             NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NewPassPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitButton)
-                .addGap(202, 202, 202))
             .addGroup(NewPassPanelLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(idTL)
+                    .addComponent(nameTL)
+                    .addComponent(gradeTL)
+                    .addComponent(seniorGatePassNumTL)
+                    .addComponent(commentsTL))
+                .addGap(28, 28, 28)
+                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(NewPassPanelLayout.createSequentialGroup()
-                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idTL)
-                            .addComponent(nameTL)
-                            .addComponent(gradeTL)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(NewPassPanelLayout.createSequentialGroup()
-                                .addComponent(dayCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(monthCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(yearCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(NewPassPanelLayout.createSequentialGroup()
-                                .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(isSeniorPassCheckBox))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(submitButton))
+                    .addComponent(seniorPassNumTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(NewPassPanelLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seniorGatePassNumTL)
-                            .addComponent(commentsTL))
-                        .addGap(18, 18, 18)
-                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seniorPassNumTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(437, Short.MAX_VALUE))
+                        .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(isSeniorPassCheckBox)))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
         NewPassPanelLayout.setVerticalGroup(
             NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NewPassPanelLayout.createSequentialGroup()
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(submitButton)
                     .addGroup(NewPassPanelLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(nameTL)
-                        .addGap(7, 7, 7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NewPassPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gradeTL)
-                    .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(isSeniorPassCheckBox)))
-                .addGap(7, 7, 7)
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idTL)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(NewPassPanelLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel1))
-                    .addGroup(NewPassPanelLayout.createSequentialGroup()
+                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(NewPassPanelLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(nameTL)
+                                .addGap(7, 7, 7))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NewPassPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)))
+                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(gradeTL)
+                            .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(gradeNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(isSeniorPassCheckBox)))
+                        .addGap(7, 7, 7)
+                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idTL)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dayCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(monthCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(yearCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))))
-                .addGap(26, 26, 26)
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(seniorGatePassNumTL)
-                    .addComponent(seniorPassNumTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(commentsTL)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(submitButton)
-                .addGap(144, 144, 144))
+                            .addComponent(seniorGatePassNumTL)
+                            .addComponent(seniorPassNumTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(NewPassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(commentsTL)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("New Pass", NewPassPanel);
+        jTabbedPane1.addTab("New GatePass", NewPassPanel);
 
         jScrollPane1.setOpaque(false);
 
         recordsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Name", "ID No.", "Grade", "Date", "Time", "Comments", "Senior Pass #"
+                "Name", "ID No.", "Grade", "Comments", "Senior Pass #"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -262,6 +215,10 @@ public class MainGUI extends javax.swing.JFrame {
             recordsTable.getColumnModel().getColumn(0).setMaxWidth(120);
             recordsTable.getColumnModel().getColumn(1).setMinWidth(70);
             recordsTable.getColumnModel().getColumn(1).setMaxWidth(70);
+            recordsTable.getColumnModel().getColumn(2).setMinWidth(60);
+            recordsTable.getColumnModel().getColumn(2).setMaxWidth(60);
+            recordsTable.getColumnModel().getColumn(4).setMinWidth(80);
+            recordsTable.getColumnModel().getColumn(4).setMaxWidth(80);
         }
 
         refreshButton.setText("refresh");
@@ -296,46 +253,6 @@ public class MainGUI extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Records", gatePassesPanel);
-
-        importButton.setText("Import");
-
-        exportButton.setText("Export");
-
-        javax.swing.GroupLayout saveExportPanelLayout = new javax.swing.GroupLayout(saveExportPanel);
-        saveExportPanel.setLayout(saveExportPanelLayout);
-        saveExportPanelLayout.setHorizontalGroup(
-            saveExportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(saveExportPanelLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(saveExportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(exportButton)
-                    .addComponent(importButton))
-                .addContainerGap(774, Short.MAX_VALUE))
-        );
-        saveExportPanelLayout.setVerticalGroup(
-            saveExportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(saveExportPanelLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(importButton)
-                .addGap(37, 37, 37)
-                .addComponent(exportButton)
-                .addContainerGap(368, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("SaveExport", saveExportPanel);
-
-        javax.swing.GroupLayout settingsPanelLayout = new javax.swing.GroupLayout(settingsPanel);
-        settingsPanel.setLayout(settingsPanelLayout);
-        settingsPanelLayout.setHorizontalGroup(
-            settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 922, Short.MAX_VALUE)
-        );
-        settingsPanelLayout.setVerticalGroup(
-            settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Settings", settingsPanel);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -421,44 +338,35 @@ public class MainGUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_submitButtonActionPerformed
 
-    private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
-        // TODO add your handling code here:
-        if(isSeniorPassCheckBox.isSelected()){ // this is a example of true polymorphism because i'm using a list
-                                               // of the superclass GatePass but the individual objects are either
-                                               // SeniorGatePass or NormalGatePass
-            
-        
-        
-        students.add(
-                new SeniorGatePass(nameTF.getText(), 
-                Integer.parseInt(gradeNumberTF.getText()), 
-                Integer.parseInt(idNumberTF.getText()),
-                commentsTF.getText(),
-                Integer.parseInt(seniorPassNumTF.getText()),    
-                // new DateTime(Byte.parseByte(dayCB.getSelectedItem()+""), monthCB.getSelectedItem()+"", Integer.parseInt(yearCB.getSelectedItem()+"")),
-                isSeniorPassCheckBox.isSelected()));
-                } // for if statement
-        
-        else{
-            students.add(
-                new NormalGatePass(nameTF.getText(), 
-                Integer.parseInt(gradeNumberTF.getText()), 
-                Integer.parseInt(idNumberTF.getText()),
-                commentsTF.getText()));            
+        if(isSeniorPassCheckBox.isSelected() == true){
+            if(seniorPassNumTF.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "You need to enter the Senior gate pass number!");
+            }
         }
-        nameTF.setText("");
-        gradeNumberTF.setText("");
-        idNumberTF.setText("");
-        commentsTF.setText("");
-        seniorPassNumTF.setText("");
-        isSeniorPassCheckBox.setSelected(false);
-        
-    }//GEN-LAST:event_submitButtonMouseReleased
+
+        for(int row = 0; row < students.size(); row ++){ // this function will loop through the table while inputting data.
+
+            if(isSeniorPassCheckBox.isSelected() == false){
+                recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
+                recordsTable.setValueAt(students.get(row).getId(), row, 1);
+                recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+                recordsTable.setValueAt(students.get(row).getComments(), row, 3);
+            }
+
+            else if(isSeniorPassCheckBox.isSelected() == true){
+                recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
+                recordsTable.setValueAt(students.get(row).getId(), row, 1);
+                recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
+                recordsTable.setValueAt(students.get(row).getComments(), row, 3);
+
+                SeniorGatePass s = (SeniorGatePass)(students.get(row));
+                recordsTable.setValueAt(s.getPassNumber(), row, 4);
+            }
+        }
+    }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void seniorPassNumTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seniorPassNumTFActionPerformed
         // TODO add your handling code here:
@@ -472,57 +380,39 @@ public class MainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_isSeniorPassCheckBoxActionPerformed
 
-    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        
-        if(isSeniorPassCheckBox.isSelected() == true){      
-            if(seniorPassNumTF.getText().equals("")){
-                JOptionPane.showMessageDialog(this, "A test dialog");
-            }
-        }
-        
-        
-        for(int row = 0; row < students.size(); row ++){ // this function will loop through the table while inputting data.
-            
-            
-            if(isSeniorPassCheckBox.isSelected() == false){
-                recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
-                recordsTable.setValueAt(students.get(row).getId(), row, 1);
-                recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
-                recordsTable.setValueAt(students.get(row).getComments(), row, 5);
-            }
-            
+    }//GEN-LAST:event_submitButtonActionPerformed
 
-            else if(isSeniorPassCheckBox.isSelected() == true){
-                recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
-                recordsTable.setValueAt(students.get(row).getId(), row, 1);
-                recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
-                recordsTable.setValueAt(students.get(row).getComments(), row, 5);
-                
-                SeniorGatePass s = (SeniorGatePass)(students.get(row));
-                recordsTable.setValueAt(s.getPassNumber(), row, 6);
-            }
-            
-            
-            
-                     
-            
-            /* if isSeniorPassCheckBox = true{
-                then get seniorPassNumTF
-            */                                                                                                                                   
-            
-            /* if isSeniorPassCheckBox = true{
-                then get senior gate pass #
-            else if seniorPassNumTF is "null" {
-                cancel submit information request
-                sout("you forgot to include senior gate pass #")
-            }
-            */
-                        /* if isSeniorPassCheckBox = false{
-                then get comments box
-            */
+    private void submitButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseReleased
+        // TODO add your handling code here:
+        if(isSeniorPassCheckBox.isSelected()){ // this is a example of true polymorphism because i'm using a list
+                                               // of the superclass GatePass but the individual objects are either
+                                               // SeniorGatePass or NormalGatePass
+
+            students.add(
+                new SeniorGatePass(nameTF.getText(),
+                    Integer.parseInt(gradeNumberTF.getText()),
+                    Integer.parseInt(idNumberTF.getText()),
+                    commentsTF.getText(),
+                    Integer.parseInt(seniorPassNumTF.getText()),
+                    isSeniorPassCheckBox.isSelected()));
+        } // for if statement
+
+        else{
+            students.add(
+                new NormalGatePass(nameTF.getText(),
+                    Integer.parseInt(gradeNumberTF.getText()),
+                    Integer.parseInt(idNumberTF.getText()),
+                    commentsTF.getText()));
         }
-    }//GEN-LAST:event_refreshButtonActionPerformed
+        nameTF.setText("");
+        gradeNumberTF.setText("");
+        idNumberTF.setText("");
+        commentsTF.setText("");
+        seniorPassNumTF.setText("");
+        isSeniorPassCheckBox.setSelected(false);
+    }//GEN-LAST:event_submitButtonMouseReleased
 
     /**
      * @param args the command line arguments
@@ -567,11 +457,9 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JComboBox<String> dayCB;
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JButton exportButton;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JPanel gatePassesPanel;
     private javax.swing.JTextField gradeNumberTF;
@@ -579,17 +467,13 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JTextPane idNumberTF;
     private javax.swing.JLabel idTL;
-    private javax.swing.JButton importButton;
     private javax.swing.JCheckBox isSeniorPassCheckBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JComboBox<String> monthCB;
     private javax.swing.JTextPane nameTF;
     private javax.swing.JLabel nameTL;
     private javax.swing.JMenuItem openMenuItem;
@@ -597,13 +481,10 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JTable recordsTable;
     private javax.swing.JButton refreshButton;
     private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JPanel saveExportPanel;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JLabel seniorGatePassNumTL;
     private javax.swing.JTextField seniorPassNumTF;
-    private javax.swing.JPanel settingsPanel;
     private javax.swing.JButton submitButton;
-    private javax.swing.JComboBox<String> yearCB;
     // End of variables declaration//GEN-END:variables
 
 }
