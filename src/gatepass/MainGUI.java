@@ -340,31 +340,33 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
-
+        /*
         if(isSeniorPassCheckBox.isSelected() == true){
             if(seniorPassNumTF.getText().equals("")){
                 JOptionPane.showMessageDialog(this, "You need to enter the Senior gate pass number!");
             }
         }
+        */
 
         for(int row = 0; row < students.size(); row ++){ // this function will loop through the table while inputting data.
-
+            /*
             if(isSeniorPassCheckBox.isSelected() == false){
                 recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
                 recordsTable.setValueAt(students.get(row).getId(), row, 1);
                 recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
                 recordsTable.setValueAt(students.get(row).getComments(), row, 3);
             }
+            */
 
-            else if(isSeniorPassCheckBox.isSelected() == true){
+            //(isSeniorPassCheckBox.isSelected() == true){
                 recordsTable.setValueAt(students.get(row).getName(), row, 0);  // row is obviously Y axis, while "0" "1" "2", etc would be X axis
                 recordsTable.setValueAt(students.get(row).getId(), row, 1);
                 recordsTable.setValueAt(students.get(row).getGrade(), row, 2);
                 recordsTable.setValueAt(students.get(row).getComments(), row, 3);
 
-                SeniorGatePass s = (SeniorGatePass)(students.get(row));
+                SeniorGatePass s = (SeniorGatePass)(students.get(row)); // getting input from senior gate pass number text field
                 recordsTable.setValueAt(s.getPassNumber(), row, 4);
-            }
+            //}
         }
     }//GEN-LAST:event_refreshButtonActionPerformed
 
@@ -396,7 +398,8 @@ public class MainGUI extends javax.swing.JFrame {
                     Integer.parseInt(idNumberTF.getText()),
                     commentsTF.getText(),
                     Integer.parseInt(seniorPassNumTF.getText()),
-                    isSeniorPassCheckBox.isSelected()));
+                    // isSeniorPassCheckBox.isSelected()));
+                    true));
         } // for if statement
 
         else{

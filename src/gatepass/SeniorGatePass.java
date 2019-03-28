@@ -11,7 +11,7 @@ package gatepass;
  */
 public class SeniorGatePass extends GatePass {
     private int passNumber = -1;
-    boolean isSenior = true; //mod
+    boolean isSenior = true;
     
     
     public SeniorGatePass(String name, int gradeLevel, int id, String comments, int passNumber, boolean setSenior) {
@@ -28,7 +28,7 @@ public class SeniorGatePass extends GatePass {
         this.passNumber = passNumber;
     }
     
-    public boolean getIsSenior(){ //mod
+    public boolean getIsSenior(){
         return isSenior;
     }
     

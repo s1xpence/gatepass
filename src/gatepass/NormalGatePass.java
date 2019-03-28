@@ -10,10 +10,10 @@ package gatepass;
  * @author 14367
  */
 public class NormalGatePass extends GatePass {
-    private boolean isSenior = false; //mod    
+    private boolean isSenior = false;    
     
     public NormalGatePass(String name, int gradeLevel, int id, String comments) {
-        super(name, gradeLevel, id, comments); //mod comments
+        super(name, gradeLevel, id, comments);
     }
     
     public boolean getIsSenior(){
