@@ -10,10 +10,6 @@ package gatepass;
  * @author 14367
  */
 public abstract class GatePass {
-    // TODO: add funny error message: "Mr. Java I don't feel so good... SEGMENTATION FAULT"
-    // TODO: GUI Class: make it so that the "senior gate pass" checkbox is only enabled conditionally
-    //       (such as if the option "G12" for grade level has been selected, then enable checkbox to be ticked.
-    //       Else, disable option for all other grades)
     private String name = "name not set yet";
     private int gradeLevel = -999;
     private int id = -123;
